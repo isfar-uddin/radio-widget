@@ -1,0 +1,37 @@
+.container {
+  cursor: pointer;
+  font-size: 44px;
+  color: #a2abbd;
+}
+
+.imgContainer {
+  display: flex;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.elipsisIcon {
+  margin: auto;
+  border-radius: 50%;
+}
+
+.plusIcon {
+  height: 64px;
+  width: 64px;
+}
+
+.minusIcon {
+  height: 64px;
+  width: 64px;
+}
+
+.itemContainer {
+  display: flex;
+  border-bottom: 1px solid gray;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.frequency {
+  font-weight: 700;
+}

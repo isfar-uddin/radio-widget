@@ -1,0 +1,18 @@
+.widgetContainer {
+  width: 640px;
+  box-shadow: 0px 10px 10px 10px rgba(40, 40, 51, 0.2);
+  border-radius: 40px;
+}
+
+.fmContainer {
+  background-color: #2b2b36;
+  overflow: auto;
+  height: 500px;
+  padding: 30px 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fmContainer::-webkit-scrollbar {
+  display: none;
+}
