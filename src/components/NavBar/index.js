@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navBar.module.scss";
-import backArrow from "./../../assets/images/back-arrow.png";
-import Switch from "./../../assets/images/switch.png";
+import backArrow from "assets/images/back-arrow.png";
+import Switch from "assets/images/switch.png";
 
 const NavBar = () => {
   return (

@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransition } from "react-transition-group";
 
-import { convertPointToComa } from "../../utils/formatNumber";
+import { convertPointToComa } from "utils/formatNumber";
 import styles from "./station.module.scss";
-import Elipsis from "./../../assets/images/elipsis.svg";
-import Plus from "./../../assets/images/plus.png";
-import Minus from "./../../assets/images/minus.png";
+import Elipsis from "assets/images/elipsis.svg";
+import Plus from "assets/images/plus.png";
+import Minus from "assets/images/minus.png";
 
 const Station = ({ station, toggleStationDetailsView }) => {
   const { id, title, frequency, isOpen } = station;

@@ -1,4 +1,4 @@
-import { fetchstationListApi } from "../../services/api/widget";
+import { fetchstationListApi } from "services/api/widget";
 
 export const FETCH_STATION_LIST = Symbol("FETCH_STATION_LIST");
 

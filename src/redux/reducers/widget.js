@@ -1,4 +1,4 @@
-import { FETCH_STATION_LIST } from "../actions/widget";
+import { FETCH_STATION_LIST } from "redux/actions/widget";
 
 const initialState = {
   stationList: [],

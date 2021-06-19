@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchstationList } from "../actions/widget";
+import { fetchstationList } from "redux/actions/widget";
 
 const mapStateToProps = (state) => ({
   stationList: state.widget.stationList,

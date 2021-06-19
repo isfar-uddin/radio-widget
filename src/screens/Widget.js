@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Station from "../components/Station";
+import Station from "components/Station";
 import styles from "./Widget.module.scss";
-import NavBar from "../components/NavBar";
-import TabBar from "../components/TabBar";
-import connectWidget from "../redux/connect/connectWidget";
+import NavBar from "components/NavBar";
+import TabBar from "components/TabBar";
+import connectWidget from "redux/connect/connectWidget";
 
 const Widget = ({ stationList, fetchstationList }) => {
   const [playingFM, setPlayingFM] = useState({});
