@@ -5,17 +5,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import connectWidget from "../redux/connect/useWidget";
 
-/* let FM = [
-  { id: 1, title: "Putin FM", frequency: 66.6 },
-  { id: 2, title: "Dribble FM", frequency: 101.2 },
-  { id: 3, title: "Doge FM", frequency: 99.4 },
-  { id: 4, title: "Ballads FM", frequency: 87.1 },
-  { id: 5, title: "Maximum FM", frequency: 142.2 },
-  { id: 6, title: "Dribble new FM", frequency: 142.2 },
-  { id: 7, title: "Putin new FM", frequency: 142.2 },
-  { id: 8, title: "Doge new FM", frequency: 142.2 },
-]; */
-
 const Widget = ({ fmList: FM, getFMList }) => {
   const [playingFM, setPlayingFM] = React.useState({});
 
