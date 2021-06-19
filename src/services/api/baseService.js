@@ -32,7 +32,6 @@ const apiCallWithData = async (url, method, data) => {
 };
 
 const apiCallWithoutData = async (url, method) => {
-  console.log("apiCallWithoutData: ", url);
   try {
     let headers = getHeaders();
     let response = await fetch(url, {

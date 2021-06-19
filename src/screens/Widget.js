@@ -1,15 +1,15 @@
-import React from "react";
-import Item from "../components/Item";
-import styles from "./Widget.module.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import connectWidget from "../redux/connect/useWidget";
+import React, { useEffect, useState } from "react";
+import Station from "../components/Station";
+import styles from "./Widget.module.scss";
+import NavBar from "../components/NavBar";
+import TabBar from "../components/TabBar";
+import connectWidget from "../redux/connect/connectWidget";
 
-const Widget = ({ fmList: FM, getFMList }) => {
-  const [playingFM, setPlayingFM] = React.useState({});
+const Widget = ({ stationList, fetchstationList }) => {
+  const [playingFM, setPlayingFM] = useState({});
 
-  const toggleFMView = (id) => {
-    FM?.map((item) => {
+  const toggleStationDetailsView = (id) => {
+    stationList?.map((item) => {
       if (item.id === id) {
         item.isOpen = !item.isOpen;
         setPlayingFM({ ...item });
@@ -19,28 +19,32 @@ const Widget = ({ fmList: FM, getFMList }) => {
     });
   };
 
-  React.useEffect(() => {
-    FM?.length > 0 &&
-      FM.map((item) => {
+  useEffect(() => {
+    stationList?.length > 0 &&
+      stationList.map((item) => {
         item.isOpen = false;
         return item;
       });
-  }, [FM]);
+  }, [stationList]);
 
-  React.useEffect(() => {
-    getFMList();
+  useEffect(() => {
+    fetchstationList();
   }, []);
 
   return (
     <div className={styles.widgetContainer}>
-      <Header />
+      <NavBar />
       <div className={styles.fmContainer}>
-        {FM.length > 0 &&
-          FM.map((item) => (
-            <Item key={item.id} item={item} toggleFMView={toggleFMView} />
+        {stationList.length > 0 &&
+          stationList.map((station) => (
+            <Station
+              key={station.id}
+              station={station}
+              toggleStationDetailsView={toggleStationDetailsView}
+            />
           ))}
       </div>
-      <Footer playingFM={playingFM} />
+      <TabBar playingFM={playingFM} />
     </div>
   );
 };

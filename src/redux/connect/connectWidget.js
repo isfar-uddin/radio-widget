@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
-import { getFMList } from "../actions/widget";
+import { fetchstationList } from "../actions/widget";
 
 const mapStateToProps = (state) => ({
-  fmList: state.widget.fmList,
+  stationList: state.widget.stationList,
 });
 
 const mapDispatchToProps = {
-  getFMList,
+  fetchstationList,
 };
 
 export default function connectWidget(Component) {

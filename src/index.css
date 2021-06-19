@@ -29,23 +29,23 @@ code {
 
 
 /* Animation to hide and show the FM details */
-.itemDetails-enter {
+.stationDetails-enter {
   opacity: 0.05;
   transform: translateY(-100%);
 }
 
-.itemDetails-enter-active {
+.stationDetails-enter-active {
   opacity: 1;
   transform: translateY(0%);
   transition: all 350ms;
 }
 
-.itemDetails-exit {
+.stationDetails-exit {
   opacity: 1;
   transform: translateY(0%);
 }
 
-.itemDetails-exit-active {
+.stationDetails-exit-active {
   opacity: 0.05;
   transform: translateY(-100%);
   transition: all 350ms;

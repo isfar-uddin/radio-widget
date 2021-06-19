@@ -1,0 +1,39 @@
+.stationContainer {
+  font-size: 44px;
+  color: #a2abbd;
+  border-bottom: 2px solid #ffffff;
+
+  .iconContainer {
+    display: flex;
+    padding-top: 40px;
+    align-items: center;
+  }
+
+  .elipsisIcon {
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  .plusIcon {
+    cursor: pointer;
+    height: 64px;
+    width: 64px;
+  }
+
+  .minusIcon {
+    cursor: pointer;
+    height: 64px;
+    width: 64px;
+  }
+
+  .stationDetails {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+  }
+
+  .frequency {
+    font-weight: 700;
+  }
+}
