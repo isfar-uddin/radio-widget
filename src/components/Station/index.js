@@ -8,10 +8,16 @@ import Elipsis from "assets/images/elipsis.svg";
 import Plus from "assets/images/plus.png";
 import Minus from "assets/images/minus.png";
 
-const Station = ({ station, toggleStationDetailsView }) => {
+const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
   const { id, title, frequency, isOpen } = station;
+
+  const nothingHappen = () => console.log("Your click is working. :)");
+
   return (
-    <div className={styles.stationContainer}>
+    <div
+      className={styles.stationContainer}
+      style={{ "border-bottom": isLastItem && "none" }}
+    >
       <CSSTransition
         in={isOpen}
         timeout={350}
@@ -19,9 +25,13 @@ const Station = ({ station, toggleStationDetailsView }) => {
         unmountOnExit
       >
         <div className={styles.iconContainer}>
-          <img className={styles.minusIcon} src={Minus} />
+          <img
+            className={styles.minusIcon}
+            src={Minus}
+            onClick={nothingHappen}
+          />
           <img className={styles.elipsisIcon} src={Elipsis} />
-          <img className={styles.plusIcon} src={Plus} />
+          <img className={styles.plusIcon} src={Plus} onClick={nothingHappen} />
         </div>
       </CSSTransition>
       <div

@@ -36,10 +36,11 @@ const Widget = ({ stationList, fetchstationList }) => {
       <NavBar />
       <div className={styles.fmContainer}>
         {stationList.length > 0 &&
-          stationList.map((station) => (
+          stationList.map((station, index) => (
             <Station
               key={station.id}
               station={station}
+              isLastItem={index === stationList.length - 1}
               toggleStationDetailsView={toggleStationDetailsView}
             />
           ))}
