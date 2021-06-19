@@ -1,24 +1,27 @@
+@import "scss/colors.scss";
+@import "scss/constants.scss";
+@import "scss/fontSize.scss";
+
 .tabBarContainer {
-  background-color: #25252f;
-  min-height: 24px;
-  padding: 8px;
-  border-radius: 0 0 40px 40px;
+  background-color: $primaryBlack;
+  padding: $primaryPadding;
+  border-radius: 0 0 $primaryBorderRadius $primaryBorderRadius;
   align-items: center;
-  height: 160px;
+  height: 80px;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #515561;
+  border-top: $primaryBorderWidth solid $secondaryGray;
 
   .info {
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: $normal;
     font-weight: 700;
-    color: #edae61;
+    color: $secondaryYellow;
   }
 
   .title {
-    color: #a2abbd;
-    font-size: 44px;
+    color: $primaryGray;
+    font-size: $large;
   }
 }

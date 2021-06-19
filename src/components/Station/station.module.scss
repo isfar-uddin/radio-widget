@@ -1,17 +1,21 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/fontSize.scss';
+
 .stationContainer {
-  font-size: 44px;
-  color: #a2abbd;
-  border-bottom: 2px solid #ffffff;
+  font-size: $large;
+  color: $primaryGrey;
+  border-bottom: $primaryBorderWidth solid $white;
 
   .iconContainer {
     display: flex;
-    padding-top: 40px;
+    padding-top: $primaryPadding;
     align-items: center;
   }
 
   .elipsisIcon {
     margin: auto;
-    border-radius: 50%;
+    border-radius: $roundBorderRadius;
   }
 
   .plusIcon {
@@ -30,7 +34,7 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    padding: 40px 0;
+    padding: $primaryPadding 0;
   }
 
   .frequency {

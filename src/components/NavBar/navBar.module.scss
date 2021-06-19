@@ -1,10 +1,14 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/fontSize.scss';
+
 .navBarContainer {
-  background-color: #ecaa5b;
+  background-color: $primaryYellow;
   display: flex;
   align-items: center;
   height: 160px;
-  padding: 0 40px;
-  border-radius: 40px 40px 0 0;
+  padding: 0 $primaryPadding;
+  border-radius: $primaryBorderRadius $primaryBorderRadius 0 0;
 
   .backArrowIcon {
     justify-self: flex-start;
@@ -15,8 +19,8 @@
 
   .title {
     text-transform: uppercase;
-    color: #ffffff;
-    font-size: 44px;
+    color: $white;
+    font-size: $large;
     font-weight: 700;
     margin: auto;
   }
