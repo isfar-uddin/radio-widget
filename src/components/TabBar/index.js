@@ -1,17 +1,39 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import { CSSTransition } from "react-transition-group";
 import styles from "./tabBar.module.scss";
 
-const Footer = ({ playingFM }) => {
+const TabBar = ({ playingFM }) => {
+  const { title, isOpen } = playingFM;
   return (
     <div className={styles.tabBarContainer}>
-      {playingFM?.isOpen && (
-        <Fragment>
+      <CSSTransition
+        in={isOpen}
+        timeout={500}
+        classNames="tabBarDetails"
+        unmountOnExit
+      >
+        <div>
           <div className={styles.info}>Currently Playing</div>
-          <span className={styles.title}>{playingFM.title}</span>
-        </Fragment>
-      )}
+          <span className={styles.title}>{title}</span>
+        </div>
+      </CSSTransition>
     </div>
   );
 };
 
-export default Footer;
+TabBar.defaultProps = {
+  playingFM: {
+    title: "",
+    isOpen: false,
+  },
+};
+
+TabBar.propTypes = {
+  playingFM: PropTypes.shape({
+    title: PropTypes.string,
+    isOpen: PropTypes.bool,
+  }),
+};
+
+export default TabBar;

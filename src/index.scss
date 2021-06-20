@@ -31,22 +31,41 @@ code {
 /* Animation to hide and show the FM details */
 .stationDetails-enter {
   opacity: 0.05;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
 }
 
 .stationDetails-enter-active {
   opacity: 1;
-  transform: translateY(0%);
-  transition: all 350ms;
+  transform: translateX(0%);
+  transition: all 500ms;
 }
 
 .stationDetails-exit {
   opacity: 1;
-  transform: translateY(0%);
+  transform: opacity 500ms ease-in-out;
 }
 
 .stationDetails-exit-active {
   opacity: 0.05;
-  transform: translateY(-100%);
-  transition: all 350ms;
+  transition: opacity 500ms ease-in-out;
+}
+
+.tabBarDetails-enter {
+  opacity: 0.05;
+  transform:  opacity 500ms ease-in-out;
+}
+
+.tabBarDetails-enter-active {
+  opacity: 1;
+  transition:  opacity 500ms ease-in-out;
+}
+
+.tabBarDetails-exit {
+  opacity: 1;
+  transform: opacity 500ms ease-in-out;
+}
+
+.tabBarDetails-exit-active {
+  opacity: 0.05;
+  transition: opacity 500ms ease-in-out;
 }

@@ -20,7 +20,7 @@ const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
     >
       <CSSTransition
         in={isOpen}
-        timeout={350}
+        timeout={500}
         classNames="stationDetails"
         unmountOnExit
       >
