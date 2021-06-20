@@ -1,6 +1,6 @@
-@import 'scss/colors.scss';
-@import 'scss/constants.scss';
-@import 'scss/fontSize.scss';
+@import "scss/colors.scss";
+@import "scss/constants.scss";
+@import "scss/fontSize.scss";
 
 .stationContainer {
   font-size: $large;
@@ -37,7 +37,12 @@
     padding: $primaryPadding 0;
   }
 
+  .stationName {
+    overflow-wrap: anywhere;
+  }
+
   .frequency {
     font-weight: 700;
+    padding-left: $padding-8;
   }
 }

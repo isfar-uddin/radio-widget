@@ -35,8 +35,8 @@ const Widget = ({ stationList, fetchstationList }) => {
     <div className={styles.widgetContainer}>
       <NavBar />
       <div className={styles.fmContainer}>
-        {stationList.length > 0 &&
-          stationList.map((station, index) => (
+        {stationList?.length > 0 &&
+          stationList?.map((station, index) => (
             <Station
               key={station.id}
               station={station}

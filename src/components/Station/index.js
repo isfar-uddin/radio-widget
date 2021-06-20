@@ -38,7 +38,7 @@ const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
         className={styles.stationDetails}
         onClick={() => toggleStationDetailsView(id)}
       >
-        <div>{title}</div>
+        <div className={styles.stationName}>{title}</div>
         <div className={styles.frequency}>{convertPointToComa(frequency)}</div>
       </div>
     </div>
