@@ -13,10 +13,10 @@ const TabBar = ({ playingFM }) => {
         classNames="tabBarDetails"
         unmountOnExit
       >
-        <div>
+        <React.Fragment>
           <div className={styles.info}>Currently Playing</div>
           <span className={styles.title}>{title}</span>
-        </div>
+        </React.Fragment>
       </CSSTransition>
     </div>
   );

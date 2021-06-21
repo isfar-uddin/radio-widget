@@ -4,6 +4,7 @@ import styles from "./Widget.module.scss";
 import NavBar from "components/NavBar";
 import TabBar from "components/TabBar";
 import connectWidget from "redux/connect/connectWidget";
+import WidgetLoader from "components/Loader/WidgetLoader";
 
 const Widget = ({ stationList, fetchStationList }) => {
   const [playingFM, setPlayingFM] = useState({});
@@ -52,6 +53,8 @@ const Widget = ({ stationList, fetchStationList }) => {
               toggleStationDetailsView={toggleStationDetailsView}
             />
           ))}
+
+        {(!stationList || stationList?.length === 0) && <WidgetLoader />}
       </div>
       <TabBar playingFM={playingFM} />
     </div>
