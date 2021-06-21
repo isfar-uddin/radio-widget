@@ -16,7 +16,7 @@ const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
   return (
     <div
       className={styles.stationContainer}
-      style={{ "border-bottom": isLastItem && "none" }}
+      style={{ borderBottom: isLastItem && "none" }}
     >
       <CSSTransition
         in={isOpen}
@@ -29,9 +29,15 @@ const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
             className={styles.minusIcon}
             src={Minus}
             onClick={nothingHappen}
+            alt="zoomout"
           />
-          <img className={styles.elipsisIcon} src={Elipsis} />
-          <img className={styles.plusIcon} src={Plus} onClick={nothingHappen} />
+          <img className={styles.elipsisIcon} src={Elipsis} alt="station" />
+          <img
+            className={styles.plusIcon}
+            src={Plus}
+            onClick={nothingHappen}
+            alt="zoomin"
+          />
         </div>
       </CSSTransition>
       <div

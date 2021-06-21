@@ -10,6 +10,7 @@ function* watchStationList() {
   });
 }
 
+//Take the latest api call
 export function* root() {
   yield all([
     yield takeLatest(

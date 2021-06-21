@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
-import { fetchstationList } from "redux/actions/widget";
+import { fetchStationList } from "redux/actions/widget";
 
 const mapStateToProps = (state) => ({
   stationList: state.widget.stationList,
 });
 
 const mapDispatchToProps = {
-  fetchstationList,
+  fetchStationList,
 };
 
 export default function connectWidget(Component) {
