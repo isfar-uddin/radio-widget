@@ -22,12 +22,26 @@
     cursor: pointer;
     height: 64px;
     width: 64px;
+    &:active {
+      background-color: rgb(50, 50, 60);
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+    }
   }
 
   .minusIcon {
     cursor: pointer;
     height: 64px;
     width: 64px;
+    &:active {
+      background-color: rgb(50, 50, 60);
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+    }
   }
 
   .stationDetails {
@@ -35,6 +49,14 @@
     display: flex;
     justify-content: space-between;
     padding: $primaryPadding 0;
+    background-position: center;
+    transition: background 0.8s;
+    &:active {
+      background-color: rgb(50, 50, 60);
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
   }
 
   .stationName {

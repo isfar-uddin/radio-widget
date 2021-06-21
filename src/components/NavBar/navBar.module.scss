@@ -1,6 +1,6 @@
-@import 'scss/colors.scss';
-@import 'scss/constants.scss';
-@import 'scss/fontSize.scss';
+@import "scss/colors.scss";
+@import "scss/constants.scss";
+@import "scss/fontSize.scss";
 
 .navBarContainer {
   background-color: $primaryYellow;
@@ -11,10 +11,17 @@
   border-radius: $primaryBorderRadius $primaryBorderRadius 0 0;
 
   .backArrowIcon {
-    justify-self: flex-start;
     height: 48px;
     width: 28px;
     cursor: pointer;
+    background-position: center;
+    transition: background 0.8s;
+    &:active {
+      background-color: $primaryYellow;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
   }
 
   .title {
@@ -26,9 +33,16 @@
   }
 
   .switchIcon {
-    justify-self: flex-end;
     height: 52px;
     width: 44px;
     cursor: pointer;
+    background-position: center;
+    transition: background 0.8s;
+    &:active {
+      background-color: $primaryYellow;
+      background-size: 100%;
+      transition: background 0s;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
   }
 }
