@@ -6,12 +6,12 @@
   background-color: $primaryBlack;
   padding: $primaryPadding;
   border-radius: 0 0 $primaryBorderRadius $primaryBorderRadius;
-  align-items: center;
   height: 80px;
   justify-content: center;
   display: flex;
   flex-direction: column;
   border-top: $primaryBorderWidth solid $secondaryGray;
+  text-align: center;
 
   .info {
     text-transform: uppercase;
@@ -26,7 +26,8 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    width: calc(100%); //Need constrained pixel to get work text-overflow;
     text-align: center;
+    display: inline-block;
   }
 }

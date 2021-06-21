@@ -10,18 +10,33 @@
   padding: 0 $primaryPadding;
   border-radius: $primaryBorderRadius $primaryBorderRadius 0 0;
 
-  .backArrowIcon {
-    height: 48px;
-    width: 28px;
+  .navBarIcon {
     cursor: pointer;
     background-position: center;
     transition: background 0.8s;
+    border-radius: 4px;
     &:active {
-      background-color: $primaryYellow;
+      background-color: $darkYellow;
       background-size: 100%;
       transition: background 0s;
-      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 4px #5e4424;
     }
+  }
+
+  .backArrowIcon {
+    @extend .navBarIcon;
+    height: 48px;
+    width: 28px;
+    padding: 4px 12px;
+    margin-left: -12px;
+  }
+
+  .switchIcon {
+    @extend .navBarIcon;
+    height: 52px;
+    width: 44px;
+    padding: 4px 8px;
+    margin-right: -8px;
   }
 
   .title {
@@ -30,19 +45,5 @@
     font-size: $large;
     font-weight: 700;
     margin: auto;
-  }
-
-  .switchIcon {
-    height: 52px;
-    width: 44px;
-    cursor: pointer;
-    background-position: center;
-    transition: background 0.8s;
-    &:active {
-      background-color: $primaryYellow;
-      background-size: 100%;
-      transition: background 0s;
-      box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
-    }
   }
 }
