@@ -1,7 +1,14 @@
 import BaseService from "./baseService";
 
 export const fetchstationListApi = async () => {
-  const response = await BaseService.get("./data.json");
-  const data = { payload: response };
+  let data;
+
+  try {
+    const response = await BaseService.get("./data.json");
+    data = { payload: response };
+  } catch (error) {
+    console.log("Error: ", error.message);
+    data = { payload: [] };
+  }
   return data;
 };
