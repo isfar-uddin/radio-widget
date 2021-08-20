@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Live Link in Netlify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Radio Widget](https://60d1cdc98fd0a7d925ae3c5b--fm-radio-widget.netlify.app/)
 
 ## Available Scripts
 
