@@ -8,10 +8,8 @@ import Elipsis from "assets/images/elipsis.svg";
 import Plus from "assets/images/plus.png";
 import Minus from "assets/images/minus.png";
 
-const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
+const Station = ({ station, onStationClick, isLastItem }) => {
   const { id, title, frequency, isOpen } = station;
-
-  const nothingHappen = () => console.log("Your click is working. :)");
 
   return (
     <div
@@ -28,22 +26,17 @@ const Station = ({ station, toggleStationDetailsView, isLastItem }) => {
           <img
             className={styles.minusIcon}
             src={Minus}
-            onClick={nothingHappen}
             alt="zoomout"
           />
           <img className={styles.elipsisIcon} src={Elipsis} alt="station" />
           <img
             className={styles.plusIcon}
             src={Plus}
-            onClick={nothingHappen}
             alt="zoomin"
           />
         </div>
       </CSSTransition>
-      <div
-        className={styles.stationDetails}
-        onClick={() => toggleStationDetailsView(id)}
-      >
+      <div className={styles.stationDetails} onClick={() => onStationClick(id)}>
         <div className={styles.stationName}>{title}</div>
         <div className={styles.frequency}>{convertPointToComa(frequency)}</div>
       </div>
@@ -56,7 +49,7 @@ Station.defaultProps = {
     title: "",
     frequency: 0,
     isOpen: false,
-    toggleStationDetailsView: () => {},
+    onStationClick: () => {},
   },
 };
 
@@ -65,7 +58,7 @@ Station.propTypes = {
     title: PropTypes.string,
     frequency: PropTypes.number,
     isOpen: PropTypes.bool,
-    toggleStationDetailsView: PropTypes.func,
+    onStationClick: PropTypes.func,
   }),
 };
 

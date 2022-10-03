@@ -15,22 +15,6 @@ let getHeaders = () => {
   }
 };
 
-const apiCallWithData = async (url, method, data) => {
-  try {
-    let headers = getHeaders();
-    let response = await fetch(url, {
-      method,
-      headers,
-      body: JSON.stringify(data),
-    });
-    let responseJson = await response.json();
-    return responseJson;
-  } catch (error) {
-    console.log("Error: ", JSON.stringify(error));
-    return {};
-  }
-};
-
 const apiCallWithoutData = async (url, method) => {
   try {
     let headers = getHeaders();
@@ -49,14 +33,6 @@ const apiCallWithoutData = async (url, method) => {
 const baseService = {
   get: (endPoint) => {
     return apiCallWithoutData(BASE_URL + endPoint, "GET");
-  },
-
-  getWithFullUrl: (url) => {
-    return apiCallWithoutData(url, "GET");
-  },
-
-  post: (endPoint, data) => {
-    return apiCallWithData(BASE_URL + endPoint, "POST", data);
   },
 };
 

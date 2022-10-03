@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { fetchStationList } from "redux/actions/widget";
 
 const mapStateToProps = (state) => ({
-  stationList: state.widget.stationList,
+  stationList: state.stationList,
 });
 
 const mapDispatchToProps = {

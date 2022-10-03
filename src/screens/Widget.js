@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Station from "components/Station";
 import styles from "./Widget.module.scss";
 import NavBar from "components/NavBar";
@@ -10,7 +11,7 @@ const Widget = ({ stationList, fetchStationList }) => {
   const [playingFM, setPlayingFM] = useState({});
 
   //Expand or collapse station details through this function
-  const toggleStationDetailsView = (id) => {
+  const onStationClick = (id) => {
     stationList?.forEach((item) => {
       if (item.id === id) {
         item.isOpen = !item.isOpen;
@@ -21,44 +22,39 @@ const Widget = ({ stationList, fetchStationList }) => {
     });
   };
 
-  //To avoid eslint error
-  const fetchStationListCallBack = useCallback(() => {
-    return fetchStationList();
-  }, [fetchStationList]);
-
-  //Set new property isOpen to check if station is collapse or not
-  useEffect(() => {
-    stationList?.length > 0 &&
-      stationList.forEach((item) => {
-        item.isOpen = false;
-        return item;
-      });
-  }, [stationList]);
-
   //Fetch the StationList when component Loaded
   useEffect(() => {
-    fetchStationListCallBack();
-  }, [fetchStationListCallBack]);
+    fetchStationList();
+  }, []);
 
   return (
     <div className={styles.widgetContainer}>
       <NavBar />
       <div className={styles.fmContainer}>
-        {stationList?.length > 0 &&
-          stationList?.map((station, index) => (
-            <Station
-              key={station.id}
-              station={station}
-              isLastItem={index === stationList.length - 1}
-              toggleStationDetailsView={toggleStationDetailsView}
-            />
-          ))}
+        {stationList?.map((station, index) => (
+          <Station
+            key={station.id}
+            station={station}
+            isLastItem={index === stationList.length - 1}
+            onStationClick={onStationClick}
+          />
+        ))}
 
-        {(!stationList || stationList?.length === 0) && <WidgetLoader />}
+        {!stationList?.length && <WidgetLoader />}
       </div>
       <TabBar playingFM={playingFM} />
     </div>
   );
+};
+
+Widget.defaultProps = {
+  stationList: [],
+  fetchStationList: () => {},
+};
+
+Widget.propTypes = {
+  stationList: PropTypes.array,
+  fetchStationList: PropTypes.func,
 };
 
 export default connectWidget(Widget);
